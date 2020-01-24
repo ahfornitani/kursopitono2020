@@ -1,4 +1,5 @@
 # Leciono 22 - Unua programaro
+from string import Template
 from decimal import Decimal, getcontext
 print('unua programaro')
 
@@ -362,3 +363,188 @@ print(a + b)
 print(len(a))
 # a.__contains__('1')
 print('1' in a)
+
+# Leciono 46: Listoj 1
+print('\nLeciono 46: \n')
+listo = []
+print(type(listo))  # <class 'list'>
+print(dir(listo))
+# pitonaj listoj estas dinamikaj ([mal]-kreskiĝantaj laŭ neceso)
+# kaj heterogenaj (eblas enhavigi malsamajn tipojn)
+print(len(listo))  # 0
+listo.append(1)
+listo.append(5)
+print(listo)  # [1, 5]
+print(len(listo))  # 2
+
+nova_listo = [1, 5, 'Kruko', 'Baniko']  # heterogeneco
+nova_listo.remove(5)  # la eron 5, ne la pozicion kvinan, ĝi forigos
+print(nova_listo)  # [1, 'Kruko', 'Baniko']
+
+# listo ja estas ŝanĝebla!
+nova_listo.reverse()  # renversigos sen krei novan liston (in place)
+print(nova_listo)  # ['Baniko', 'Kruko', 1]
+
+# Leciono 47: Listoj 2
+print('\nLeciono 47: \n')
+
+listo = [1, 5, 'Kruko', 'Baniko', 'Vilhelmo',  3.1415]
+print(listo.index('Vilhelmo'))  # listo havas indicojn, ĉi-kaze 4
+# print(listo.index(42)) # eraro, anstataŭ montri negativan indicon
+print(listo[2])  # 'Kruko'
+print('Baniko' in listo)  # True
+# print(listo[9]) # indico fore de intervalo
+print(listo[-1])  # samkiel ĉenoj, do 3.1415
+print(listo[-3])  # 'Baniko'
+
+# Leciono 48: Listoj 3
+print('\nLeciono 48: \n')
+
+listo = ['Akvo', 'Biero', 'Vino', 'Ĉokolado', 'Pomo']
+print(listo[1:3])  # de indico 1 ĝis 3, sen inkluzivi 3-n, do ['Biero', 'Vino']
+print(listo[1:-1])  # ['Biero', 'Vino', 'Ĉokolado']
+print(listo[1:])  # de indico 1 ĝisfine ['Biero', 'Vino', 'Ĉokolado', 'Pomo']
+# de indico 0 ĝis -1 sen inkluzivi tiun lastan: ['Akvo', 'Biero', 'Vino', 'Ĉokolado']
+print(listo[:-1])
+print(listo[:])  # same ol print(listo)
+print(listo[::2])  # tuta listo, po du ['Akvo', 'Vino', 'Pomo']
+# same ol listo.reverse() ['Pomo', 'Ĉokolado', 'Vino', 'Biero', 'Akvo']
+print(listo[::-1])
+del listo[2]  # forigos 'Vino'-n
+print(listo)  # ['Akvo', 'Biero', 'Ĉokolado', 'Pomo']
+del listo[1:]
+print(listo)  # ['Akvo']
+
+# Leciono 49: Opoj (tuples)
+print('\nLeciono 49: \n')
+
+# plej granda diferenco inter listoj kaj opoj estas neŝanĝebleco de opoj
+opo = tuple()
+opo = ()
+print(type(opo))  # <class 'tuple'>
+
+# sube, ĉar parentezoj ankaŭ indikas esprimojn, esti atenta
+opo = ('unu')  # variablo "opo" nun estas ĉeno
+print(type(opo))  # <class 'str'>
+
+# por deklari unu-nombran opon, uzu komon
+opo = ('unu',)
+print(type(opo))  # <class 'tuple'>
+print(opo[0])  # indicigita tipo, samkiel listo, do " unu "
+
+# eraro, pro neŝanĝebleco (TypeError: 'tuple' object does not support item assignment)
+# opo[0] = 'nova'
+
+koloroj = ('verda', 'flava', 'blua', 'blanka', 'blanka')
+print(koloroj[0])  # verda
+print(koloroj[-1])  # blanka
+print(koloroj[1:])  # ('flava', 'blua', 'blanka', 'blanka') ; kaj tiel plu
+print(koloroj.count('blanka'))  # kiom da eroj estas 'blanka', do 2
+print(len(koloroj))  # 5
+
+# Leciono 50: Vortaroj 1
+print('\nLeciono 50: \n')
+
+# plej kutime, indico de vortaro enhavas ĉenon, sed eblas entjero ktp
+# pitona vortaro TRE similas al objekto de ĴavaSkripto
+# sed kiel la nomo diras, estas alia afero. (objektoj determinas heredecon, ekz-e)
+homo = {'nomo': 'Instruistino Ana', 'aĝo': 38,
+        'kursoj': ['Angla', 'Portugala']}
+print(type(homo))  # <class 'dict'>
+# dir(dict)
+print(len(homo))  # 3
+
+# {'nomo': 'Instruistino Ana', 'aĝo': 38, 'kursoj': ['Angla', 'Portugala']}
+print(homo)
+print(homo['nomo'])  # Instruistino Ana
+print(homo['aĝo'])  # 38
+print(homo['kursoj'])  # ['Angla', 'Portugala']
+print(homo['kursoj'][1])  # Portugala
+# homo['etikedoj'] # eraro, ĉar indico ne ekzistas
+print(homo.keys())  # dict_keys(['nomo', 'aĝo', 'kursoj'])
+
+# dict_values(['Instruistino Ana', 38, ['Angla', 'Portugala']])
+print(homo.values())
+# dict_items([('nomo', 'Instruistino Ana'), ('aĝo', 38), ('kursoj', ['Angla', 'Portugala'])])
+print(homo.items())
+
+print(homo.get('aĝo'))  # 38
+print(homo.get('etikedoj'))  # None , ĉar ne ekzistas
+
+# liveras [], ĉar oni indikis ĝin kiel implican
+print(homo.get('etikedoj', []))
+
+# Leciono 51: Vortaroj 2
+print('\nLeciono 51: \n')
+
+homo = {'nome': 'Instruisto Alberto', 'aĝo': 43, 'kursoj': ['React', 'Python']}
+homo['aĝo'] = 44
+homo['kursoj'].append('Angular')
+# {'nome': 'Instruisto Alberto', 'aĝo': 44, 'kursoj': ['React', 'Python', 'Angular']}
+print(homo)
+
+homo.pop('aĝo')  # kiel pop() de JS-a matrico
+# {'nome': 'Instruisto Alberto', 'kursoj': ['React', 'Python', 'Angular']}
+print(homo)
+
+homo.update({'aĝo': 40, 'Genro': 'V'})
+# {'nome': 'Instruisto Alberto', 'kursoj': ['React', 'Python', 'Angular'], 'aĝo': 40, 'Genro': 'V'}
+print(homo)
+
+del homo['kursoj']
+print(homo)  # {'nome': 'Instruisto Alberto', 'aĝo': 40, 'Genro': 'V'}
+
+homo.clear()
+print(homo)  # {}
+
+# Leciono 52: Aroj
+print('\nLeciono 52: \n')
+
+# aro estas malordigita (sen-indica) kolekto sen duobligitaj elementoj (senripeta kolekto)
+# aro estas do senindica senorda senripeta kolekto
+# prezentita per kunigaj krampoj {}
+# rondaj (()), angulaj (< >), rektaj ([ ]), kunigaj ({ }) krampoj;
+# malferma, ferma krampo; ekkrampo, finkrampo
+# vortaro estas {ŝlosilo:, valoro:}, aro estas nur {valoro:}
+
+a = {1, 2, 3}
+print(type(a))  # <class 'set'>
+# {'t', 'n', 'o', 'p', 'i'} kreiĝis aro ekde la ĉeno, senripete
+a = set('pitonnnno')
+print(a)
+
+print('3' not in a, 'n' in a)  # True True
+
+print({1, 2, 3} == {3, 2, 1, 3})  # True
+
+# operoj
+# unuigo
+aro1 = {1, 2}
+aro2 = {2, 3}
+print(aro1.union(aro2))  # {1, 2, 3} , sen modifi ambaŭ aroj, sed kreonte novan
+print(aro1.intersection(aro2))  # {2} ankaŭ novkreita
+aro1.update(aro2)
+print(aro1)  # {1, 2, 3} aktualigo de aro1 laŭ eroj en aro2
+
+print(aro2 <= aro1)  # ĉu aro2 estas sub-aro de aro1? True
+print(aro1 >= aro2)  # ĉu aro1 estas super-aro de aro2? True
+
+print({1, 2, 3} - {2})  # diferenco/subtraho inter aroj, do {1, 3}
+print(aro1 - aro2)  # {1}
+
+# subtraha atribuo
+aro1 -= {2}
+print(aro1)  # {1, 3}
+
+# Leciono 53: Interpolado de ĉenoj
+print('\nLeciono 53: \n')
+
+nomo, aĝo = 'Joop', 30
+
+print('Nomo: %s Aĝo: %d' % (nomo, aĝo))  # eksmoda
+print('Nomo: {0} Aĝo: {1}'.format(nomo, aĝo))  # ĝis pitono < 3.6
+print(f'Nomo: {nomo} Aĝo: {aĝo}')  # ekde pitono >= 3.6
+
+# from string import Template
+# s = Template('Nomo: $nomo Aĝo: $aĝo')
+# print(s.substitute(nomo=nomo, aĝo=aĝo))
