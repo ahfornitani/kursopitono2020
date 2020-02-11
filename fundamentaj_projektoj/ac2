@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import math
+# A = πr²
+# print(f'La areo estas: {round(areo, 3)}')
+
+
+if __name__ == '__main__':
+    def areo_de_cirklo(radiuso):
+        areo = math.pi * math.pow(radiuso, 2)
+        print(f'La areo de cirklo estas {round(areo, 3)}')
+        return areo
+
+    ĉu_float = False
+    while not ĉu_float:
+        try:
+            radiuso = float(input('Bv. enigu la radiuson: '))
+            areo_de_cirklo(radiuso)
+            ĉu_float = True
+        except ValueError:
+            print('''Bv. enigi punkton anstataŭ komon,
+            aŭ kontrolu ĉu via valoro validas''')

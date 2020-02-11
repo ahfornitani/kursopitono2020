@@ -1,5 +1,5 @@
 # Leciono 22 - Unua programaro
-from string import Template
+# from string import Template
 from decimal import Decimal, getcontext
 print('unua programaro')
 
@@ -17,7 +17,8 @@ print(a + b)
 a = 'Nun mi estas ĉeno!'
 print(a)
 # samtempe, ĝi estas forte tipigita:
-# ekz-e print(a + b) nun kaŭzos eraro, ĉar la interpretilo ne provos "diveni" kion fari
+# ekz-e print(a + b) nun kaŭzos eraro, ĉar la interpretilo
+# ne provos "diveni" kion fari
 
 # Leciono 25: Komentoj
 # Miaj variabloj
@@ -153,9 +154,9 @@ mardo = True
 tv32 = False
 tv50 = False
 
-if mardo == False and ĵaŭdo == False:
+if not mardo and not ĵaŭdo:
     print('Resti hejme, sen eĉ glaciaĵon')
-elif (mardo == False and ĵaŭdo == True) or (mardo == True and ĵaŭdo == False):
+elif (not mardo and ĵaŭdo) or (mardo and not ĵaŭdo):
     print('Iri al butikumejo, aĉeti TV-n 32 kaj manĝi glaciaĵon')
 else:
     print('Iri al butikumejo, aĉeti TV-n 32 kaj manĝi glaciaĵon')
@@ -169,7 +170,8 @@ tv_32 = laboro_mardo != laboro_ĵaŭdo
 pli_da_sano = not glaciaĵo
 
 print(
-    f'Tv50 = {tv_50} ; Tv32 = {tv_32}; Glaciaĵo = {glaciaĵo}; Sana = {pli_da_sano}')
+    f'Tv50 = {tv_50} ; Tv32 = {tv_32}; \
+    Glaciaĵo = {glaciaĵo}; Sana = {pli_da_sano}')
 
 # Leciono 34: Unuumaj operaciiloj
 print('\nLeciono 34: ')
@@ -305,10 +307,13 @@ print('\nLeciono 42: \n')
 # ĉenoj estas neŝanĝeblaj
 nomo = 'Kolomano Kaloĉajo'
 print(nomo[0])  # 'K'
-# nomo[0] = 'S' # eraro pro neŝanĝebleco: TypeError: 'str' object does not support item assignment
+# nomo[0] = 'S' # eraro pro neŝanĝebleco:
+#   TypeError: 'str' object does not support item assignment
 # kio JA eblas modifi: la enhavon de la variablo, per re-atribuigo
 nomo = 'Kálmán Kalocsay'
-print(nomo)  # Kálmán Kalocsay (jen nova ĉeno kreita memore, kaj kio anstataŭigas la antaŭan, SEN modifi ĝin)
+print(nomo)
+# Kálmán Kalocsay (jen nova ĉeno kreita memore,
+# kaj kio anstataŭigas la antaŭan, SEN modifi ĝin)
 
 # Leciono 43: Ĉenoj 2
 print('\nLeciono 43: \n')
@@ -317,9 +322,11 @@ nomo = 'Katalin Kovats'
 print(nomo[0])  # K
 print(nomo[6])  # n
 print(nomo[-2])  # t
-# ekde pozicio 7, kiu estas la spaco -> "Kovats", inkluvizas la pozicion elektatan
+# ekde pozicio 7, kiu estas la spaco -> "Kovats",
+# inkluvizas la pozicion elektatan
 print(nomo[8:])
-# same, sed kalkulante ekde la fino renversen -> "Kovats", inkluzivas la pozicion elektatan
+# same, sed kalkulante ekde la fino renversen -> "Kovats",
+# inkluzivas la pozicion elektatan
 print(nomo[-6:])
 print(nomo[:4])  # "Kata", ne inkluzivas la pozicion elektatan ([4] estas "l")
 print(nomo[2:5])  # montros de 2 ĝis 4, do "tal"
@@ -344,7 +351,8 @@ print("estas" not in frazo)  # False
 print(len(frazo))  # 34
 print(frazo.upper())  # PITONO ESTAS BONEGA PROGRAMLINGVO!
 print(frazo)  # same as antaŭe, ĉar ĉeno estas neŝanĝebla
-# split() montros liston. Implica apartig-valoro (split) estas spaco # ['Pitono', 'estas', 'bonega', 'programlingvo!']
+# split() montros liston. Implica apartig-valoro (split) estas spaco
+# # ['Pitono', 'estas', 'bonega', 'programlingvo!']
 print(frazo.split())
 # nun per specifa signo, litero P
 print(frazo.split('a'))  # ['Pitono est', 's boneg', ' progr', 'mlingvo!']
@@ -404,7 +412,8 @@ listo = ['Akvo', 'Biero', 'Vino', 'Ĉokolado', 'Pomo']
 print(listo[1:3])  # de indico 1 ĝis 3, sen inkluzivi 3-n, do ['Biero', 'Vino']
 print(listo[1:-1])  # ['Biero', 'Vino', 'Ĉokolado']
 print(listo[1:])  # de indico 1 ĝisfine ['Biero', 'Vino', 'Ĉokolado', 'Pomo']
-# de indico 0 ĝis -1 sen inkluzivi tiun lastan: ['Akvo', 'Biero', 'Vino', 'Ĉokolado']
+# de indico 0 ĝis -1 sen inkluzivi tiun lastan:
+# ['Akvo', 'Biero', 'Vino', 'Ĉokolado']
 print(listo[:-1])
 print(listo[:])  # same ol print(listo)
 print(listo[::2])  # tuta listo, po du ['Akvo', 'Vino', 'Pomo']
@@ -432,7 +441,8 @@ opo = ('unu',)
 print(type(opo))  # <class 'tuple'>
 print(opo[0])  # indicigita tipo, samkiel listo, do " unu "
 
-# eraro, pro neŝanĝebleco (TypeError: 'tuple' object does not support item assignment)
+# eraro, pro neŝanĝebleco
+# (TypeError: 'tuple' object does not support item assignment)
 # opo[0] = 'nova'
 
 koloroj = ('verda', 'flava', 'blua', 'blanka', 'blanka')
@@ -447,7 +457,8 @@ print('\nLeciono 50: \n')
 
 # plej kutime, indico de vortaro enhavas ĉenon, sed eblas entjero ktp
 # pitona vortaro TRE similas al objekto de ĴavaSkripto
-# sed kiel la nomo diras, estas alia afero. (objektoj determinas heredecon, ekz-e)
+# sed kiel la nomo diras, estas alia afero.
+# (objektoj determinas heredecon, ekz-e)
 homo = {'nomo': 'Instruistino Ana', 'aĝo': 38,
         'kursoj': ['Angla', 'Portugala']}
 print(type(homo))  # <class 'dict'>
@@ -465,7 +476,8 @@ print(homo.keys())  # dict_keys(['nomo', 'aĝo', 'kursoj'])
 
 # dict_values(['Instruistino Ana', 38, ['Angla', 'Portugala']])
 print(homo.values())
-# dict_items([('nomo', 'Instruistino Ana'), ('aĝo', 38), ('kursoj', ['Angla', 'Portugala'])])
+# dict_items([('nomo', 'Instruistino Ana'), ('aĝo', 38),
+# ('kursoj', ['Angla', 'Portugala'])])
 print(homo.items())
 
 print(homo.get('aĝo'))  # 38
@@ -480,7 +492,8 @@ print('\nLeciono 51: \n')
 homo = {'nome': 'Instruisto Alberto', 'aĝo': 43, 'kursoj': ['React', 'Python']}
 homo['aĝo'] = 44
 homo['kursoj'].append('Angular')
-# {'nome': 'Instruisto Alberto', 'aĝo': 44, 'kursoj': ['React', 'Python', 'Angular']}
+# {'nome': 'Instruisto Alberto', 'aĝo': 44,
+# 'kursoj': ['React', 'Python', 'Angular']}
 print(homo)
 
 homo.pop('aĝo')  # kiel pop() de JS-a matrico
@@ -488,7 +501,8 @@ homo.pop('aĝo')  # kiel pop() de JS-a matrico
 print(homo)
 
 homo.update({'aĝo': 40, 'Genro': 'V'})
-# {'nome': 'Instruisto Alberto', 'kursoj': ['React', 'Python', 'Angular'], 'aĝo': 40, 'Genro': 'V'}
+# {'nome': 'Instruisto Alberto',
+# 'kursoj': ['React', 'Python', 'Angular'], 'aĝo': 40, 'Genro': 'V'}
 print(homo)
 
 del homo['kursoj']
@@ -500,7 +514,8 @@ print(homo)  # {}
 # Leciono 52: Aroj
 print('\nLeciono 52: \n')
 
-# aro estas malordigita (sen-indica) kolekto sen duobligitaj elementoj (senripeta kolekto)
+# aro estas malordigita (sen-indica) kolekto
+# sen duobligitaj elementoj (senripeta kolekto)
 # aro estas do senindica senorda senripeta kolekto
 # prezentita per kunigaj krampoj {}
 # rondaj (()), angulaj (< >), rektaj ([ ]), kunigaj ({ }) krampoj;
