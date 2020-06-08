@@ -2,4 +2,5 @@ import requests
 
 response = requests.get('http://httpbin.org/ip')
 
-print('Your IP is {0}'.format(response.json()['origin']))
+# print('Your IP is {0}'.format(response.json()['origin']))
+print(f"Your IP is {response.json()['origin']}")

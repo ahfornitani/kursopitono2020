@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+
+# Conceitos Notas
+# A         De 10, a 9,1
+# A-        De 9,0 a 8,1
+# B         De 8,0 a 7,1
+# B-        De 7,0 a 6,1
+# C         De 6,0 a 5,1
+# C-        De 5,0 a 4,1
+# D         De 4,0 a 3,1
+# D-        De 3,0 a 2,1
+# E         De 2,0 a 1,1
+# E-        De 1,0 a 0
+# Para notas maiores que 10, ou menores que 0, imprimir "Nota inválida"
+import math
+
+
+if __name__ == "__main__":
+    noto = input(
+        "Entajpu valoron de noto, kaj vidu, al kiu litero ĝi ekvivalentas: ").replace(",", ".")
+
+    def erarmesaĝo():
+        print("Nevalida valoro! Entajpu valoron numeran por la noto, inter 0 kaj 10")
+
+    try:
+        noto = float(noto)
+        if(noto > 0 and noto <= 1):
+            print("Via noto, litere: E-")
+        elif(noto > 1 and noto <= 2):
+            print("Via noto, litere: E")
+        elif(noto > 2 and noto <= 3):
+            print("Via noto, litere: D-")
+        elif(noto > 3 and noto <= 4):
+            print("Via noto, litere: D")
+        elif(noto > 4 and noto <= 5):
+            print("Via noto, litere: C-")
+        elif(noto > 5 and noto <= 6):
+            print("Via noto, litere: C")
+        elif(noto > 6 and noto <= 7):
+            print("Via noto, litere: B-")
+        elif(noto > 7 and noto <= 8):
+            print("Via noto, litere: B")
+        elif(noto > 8 and noto <= 9):
+            print("Via noto, litere: A-")
+        elif (noto > 9 and noto <= 10):
+            print("Via noto, litere: A")
+        else:
+            erarmesaĝo()
+
+    except ValueError:
+        erarmesaĝo()

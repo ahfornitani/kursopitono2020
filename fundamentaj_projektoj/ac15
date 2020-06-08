@@ -4,7 +4,7 @@ import sys
 import errno
 
 
-class TerminalColor:
+class TerminalaKoloro:
     ERARE = '\033[91m'
     NORMALE = '\033[0m'
 
@@ -22,12 +22,14 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         help_mesaĝilo()
         sys.exit(errno.EPERM)
-    elif not sys.argv[1].isnumeric():
+
+    if not sys.argv[1].isnumeric():
         help_mesaĝilo()
-        print(TerminalColor.ERARE +
+        print(TerminalaKoloro.ERARE +
               'Radiuso necesas esti numera valoro. '
-              + TerminalColor.NORMALE)
-    else:
-        radiuso = float(sys.argv[1])
-        areo = cirklo(radiuso)
-        print(f'La areo de la cirklo estas {areo}')
+              + TerminalaKoloro.NORMALE)
+        sys.exit(errno.EINVAL)
+
+    radiuso = float(sys.argv[1])
+    areo = cirklo(radiuso)
+    print(f'La areo de la cirklo estas {areo}')
