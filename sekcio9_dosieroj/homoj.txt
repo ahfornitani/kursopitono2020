@@ -1,0 +1,6 @@
+Nomo: Maria, Aĝo:  45
+Nomo: Johano, Aĝo:  33
+Nomo: Petro, Aĝo:  63
+Nomo: Anna, Aĝo:  21
+Nomo: Elizabeto, Aĝo:  40
+Nomo: Karlo, Aĝo:  14

@@ -1,12 +1,13 @@
 # Leciono 22 - Unua programaro
 # from string import Template
 from decimal import Decimal, getcontext
-print('unua programaro')
+
+print("unua programaro")
 
 # Leciono 23 - Bazaj tipoj
-print('Vi estas ' + 10 * 'tre ' + 'bela!')
+print("Vi estas " + 10 * "tre " + "bela!")
 print([1, 2, 3])
-print({'nomo': 'Augusto', 'aĝo': '29'})
+print({"nomo": "Augusto", "aĝo": "29"})
 
 # Leciono 24 - Variabloj
 # Pitono estas dinamik-tipa lingvaĵo
@@ -14,7 +15,7 @@ print({'nomo': 'Augusto', 'aĝo': '29'})
 a = 10
 b = 5.2
 print(a + b)
-a = 'Nun mi estas ĉeno!'
+a = "Nun mi estas ĉeno!"
 print(a)
 # samtempe, ĝi estas forte tipigita:
 # ekz-e print(a + b) nun kaŭzos eraro, ĉar la interpretilo
@@ -31,7 +32,7 @@ La ideo estas kalkuli
 kiom da mono restos
 post monat-fino
 """
-print('Fino')  # komento ankaŭ ĉi tie validas
+print("Fino")  # komento ankaŭ ĉi tie validas
 
 # Leciono 26: Aritmetikaj operaciiloj
 # Aritmetikaj operaciiloj estas duumaj (ĉiam du "operaciatoj")
@@ -41,7 +42,7 @@ print(4 - 7)
 print(2 * 5.3)
 print(9.4 / 3)  # 3.1333333333333333
 print(9.4 // 3)  # 3.0
-print(2**8)  # 256
+print(2 ** 8)  # 256
 print(10 % 3)  # 1
 a = 12
 b = a
@@ -58,7 +59,7 @@ print(a + b)
 salajro = 3450.45
 elspezoj = 2456.2
 kpd = (elspezoj / salajro) * 100
-print(f'{round(kpd, 2)} %')
+print(f"{round(kpd, 2)} %")
 
 # Leciono 29: Rilataj operaciiloj
 print(3 > 4)  # False
@@ -67,7 +68,7 @@ print(1 < 2)  # True
 print(3 <= 1)  # False
 print(3 != 2)  # True
 print(3 == 3)  # True
-print(2 == '2')  # False
+print(2 == "2")  # False
 
 # Leciono 30: Atribuiloj
 var_a = 3
@@ -148,18 +149,18 @@ celo = favora_saldo and kontrolitaj_spezoj
 print(celo)  # True
 
 # Leciono 32 kaj 33: Defio pri logikaj operaciiloj
-print('\nLeciono 33: \n')
+print("\nLeciono 33: \n")
 mardo = True
 ĵaŭdo = False
 tv32 = False
 tv50 = False
 
 if not mardo and not ĵaŭdo:
-    print('Resti hejme, sen eĉ glaciaĵon')
+    print("Resti hejme, sen eĉ glaciaĵon")
 elif (not mardo and ĵaŭdo) or (mardo and not ĵaŭdo):
-    print('Iri al butikumejo, aĉeti TV-n 32 kaj manĝi glaciaĵon')
+    print("Iri al butikumejo, aĉeti TV-n 32 kaj manĝi glaciaĵon")
 else:
-    print('Iri al butikumejo, aĉeti TV-n 32 kaj manĝi glaciaĵon')
+    print("Iri al butikumejo, aĉeti TV-n 32 kaj manĝi glaciaĵon")
 
 # aŭ
 laboro_mardo = True
@@ -170,11 +171,12 @@ tv_32 = laboro_mardo != laboro_ĵaŭdo
 pli_da_sano = not glaciaĵo
 
 print(
-    f'Tv50 = {tv_50} ; Tv32 = {tv_32}; \
-    Glaciaĵo = {glaciaĵo}; Sana = {pli_da_sano}')
+    f"Tv50 = {tv_50} ; Tv32 = {tv_32}; \
+    Glaciaĵo = {glaciaĵo}; Sana = {pli_da_sano}"
+)
 
 # Leciono 34: Unuumaj operaciiloj
-print('\nLeciono 34: ')
+print("\nLeciono 34: ")
 a = 3
 # a++
 a += 1
@@ -190,20 +192,19 @@ not False
 not not True
 
 # Leciono 35: Triumaj operaciiloj
-print('\nLeciono 35: \n')
+print("\nLeciono 35: \n")
 pluvas = True
-pripluvo = 'Hodiaŭ miaj vestaĵoj estas ' + ('sekaj.', 'malsekaj.')[pluvas]
+pripluvo = "Hodiaŭ miaj vestaĵoj estas " + ("sekaj.", "malsekaj.")[pluvas]
 print(pripluvo)
-pripluvoif = 'Hodiaŭ miaj vestaĵoj estas ' + \
-    ('malsekaj.' if pluvas else 'sekaj.')
+pripluvoif = "Hodiaŭ miaj vestaĵoj estas " + ("malsekaj." if pluvas else "sekaj.")
 print(pripluvoif)
 
 # Leciono 36: Kromaj operaciiloj
 # membra operaciilo
-print('\nLeciono 36: \n')
-listo = [1, 2, 3, 'Anna', 'Karlo']
+print("\nLeciono 36: \n")
+listo = [1, 2, 3, "Anna", "Karlo"]
 print(2 in listo)  # True
-print('Anna' not in listo)  # False
+print("Anna" not in listo)  # False
 
 # identeca operaciilo
 x = 3
@@ -225,9 +226,9 @@ print(listo_b is listo_c)  # False
 print(listo_a is not listo_c)  # True
 
 # Leciono 37: Integritaj moduloj kaj ĉiea amplekso (global scope)
-print('\nLeciono 37: \n')
+print("\nLeciono 37: \n")
 print(type(1))  # <class 'int'>
-print(__builtins__.type('Hej, uloj!'))  # <class 'str'>
+print(__builtins__.type("Hej, uloj!"))  # <class 'str'>
 __builtins__.print(10 / 3)  # 3.3333333333333335
 # print(help(dir)) # longa teksto
 nomo = "Johano Zamenhof"
@@ -235,12 +236,12 @@ print(type(nomo))  # <class 'str'>
 print(__builtins__.len(nomo))
 
 # Leciono 38: Konverto de tipoj
-print('\nLeciono 38: \n')
+print("\nLeciono 38: \n")
 print(2 + 3)  # 5
-print('2' + '3')  # 23
+print("2" + "3")  # 23
 # print(2 + '3') # eraro
 a = 2
-b = '3'
+b = "3"
 print(type(a))  # <class 'int'>
 print(type(b))  # <class 'str'>
 print(a + int(b))  # 5
@@ -251,9 +252,9 @@ print(a + float(3.4))  # 5.4
 
 # Leciono 39: Aŭtomata altipigo (coercion)
 # okazas kiam ne ekzistas ambigueco, do implica altipogo ne necesas
-print('\nLeciono 39: \n')
+print("\nLeciono 39: \n")
 print(10 / 2)  # rezulto de divido ĉiam estas float
-print(type(10/2))  # <class 'float'>
+print(type(10 / 2))  # <class 'float'>
 print(10 // 3)
 print(type(10 // 3))  # <class 'int'>
 # ĉar float konservas pli da datumoj, ĝi bezontas por la suba operacio
@@ -263,20 +264,20 @@ print(2 + True)  # True estas "1", do rezulto estas "3"
 print(2 + 0)  # same, False estas 0, do rezulto estas "2"
 
 # Leciono 40: Numeroj 1
-print('\nLeciono 40: \n')
+print("\nLeciono 40: \n")
 print(dir(int))
-print('\n')
+print("\n")
 print(dir(float))
 a = 5
 b = 2.5
 print(a / b)  # float
 print(a + b)  # float ktp
 
-print('\n')
+print("\n")
 
 print(b.is_integer())  # False
-print(5.0.is_integer())  # True . Ĝi ne estas <int>, sed entjera valoro
-print(5.1.is_integer())  # False . Samkiale as antaŭa linio
+print(5.0 .is_integer())  # True . Ĝi ne estas <int>, sed entjera valoro
+print(5.1 .is_integer())  # False . Samkiale as antaŭa linio
 
 print(int.__add__(2, 3))  # 5 (per integrita modulo de <int>)
 print(2 + 3)  # same, sed per modulo add de __builtins__
@@ -285,7 +286,7 @@ print((-2).__abs__())  # 2 per abs metodo de <int>
 print(abs(-2))  # 2 , per builtins
 
 # Leciono 41: Numeroj 2 > Dekumaj numeroj
-print('\nLeciono 41: \n')
+print("\nLeciono 41: \n")
 
 print(1.1 + 2.2)  # 3.3000000000000003
 
@@ -302,23 +303,23 @@ getcontext().prec = 4
 print(Decimal(1) / Decimal(7))  # 0.1429
 
 # Leciono 42: Ĉenoj 1
-print('\nLeciono 42: \n')
+print("\nLeciono 42: \n")
 
 # ĉenoj estas neŝanĝeblaj
-nomo = 'Kolomano Kaloĉajo'
+nomo = "Kolomano Kaloĉajo"
 print(nomo[0])  # 'K'
 # nomo[0] = 'S' # eraro pro neŝanĝebleco:
 #   TypeError: 'str' object does not support item assignment
 # kio JA eblas modifi: la enhavon de la variablo, per re-atribuigo
-nomo = 'Kálmán Kalocsay'
+nomo = "Kálmán Kalocsay"
 print(nomo)
 # Kálmán Kalocsay (jen nova ĉeno kreita memore,
 # kaj kio anstataŭigas la antaŭan, SEN modifi ĝin)
 
 # Leciono 43: Ĉenoj 2
-print('\nLeciono 43: \n')
+print("\nLeciono 43: \n")
 
-nomo = 'Katalin Kovats'
+nomo = "Katalin Kovats"
 print(nomo[0])  # K
 print(nomo[6])  # n
 print(nomo[-2])  # t
@@ -331,7 +332,7 @@ print(nomo[-6:])
 print(nomo[:4])  # "Kata", ne inkluzivas la pozicion elektatan ([4] estas "l")
 print(nomo[2:5])  # montros de 2 ĝis 4, do "tal"
 
-numeroj = '1234567890'
+numeroj = "1234567890"
 print(numeroj[::])  # montros ĉiujn. Sennecese...
 print(numeroj[::2])  # montros po du "13579"
 print(numeroj[1::2])  # po du, ekde 1: "24680"
@@ -342,9 +343,9 @@ print(numeroj[::-2])  # 08462
 print(nomo[::-1])  # stavoK nilataK
 
 # Leciono 44: Ĉenoj 3
-print('\nLeciono 44: \n')
+print("\nLeciono 44: \n")
 
-frazo = 'Pitono estas bonega programlingvo!'
+frazo = "Pitono estas bonega programlingvo!"
 print("pi" in frazo)  # False , ĉar Pitino distingas usklecon pi != Pi
 print("estas" in frazo)  # True
 print("estas" not in frazo)  # False
@@ -355,14 +356,14 @@ print(frazo)  # same as antaŭe, ĉar ĉeno estas neŝanĝebla
 # # ['Pitono', 'estas', 'bonega', 'programlingvo!']
 print(frazo.split())
 # nun per specifa signo, litero P
-print(frazo.split('a'))  # ['Pitono est', 's boneg', ' progr', 'mlingvo!']
+print(frazo.split("a"))  # ['Pitono est', 's boneg', ' progr', 'mlingvo!']
 
 # print(help(str.center))
 
 # Leciono 45: Ĉenoj 4 - magiaj metodoj
-print('\nLeciono 45: \n')
-a = '123'
-b = ' von Rübeck 4'
+print("\nLeciono 45: \n")
+a = "123"
+b = " von Rübeck 4"
 
 # a.__add__(a, b)
 # str.__add__(a, b)
@@ -370,10 +371,10 @@ print(a + b)
 # a.__len__()
 print(len(a))
 # a.__contains__('1')
-print('1' in a)
+print("1" in a)
 
 # Leciono 46: Listoj 1
-print('\nLeciono 46: \n')
+print("\nLeciono 46: \n")
 listo = []
 print(type(listo))  # <class 'list'>
 print(dir(listo))
@@ -385,7 +386,7 @@ listo.append(5)
 print(listo)  # [1, 5]
 print(len(listo))  # 2
 
-nova_listo = [1, 5, 'Kruko', 'Baniko']  # heterogeneco
+nova_listo = [1, 5, "Kruko", "Baniko"]  # heterogeneco
 nova_listo.remove(5)  # la eron 5, ne la pozicion kvinan, ĝi forigos
 print(nova_listo)  # [1, 'Kruko', 'Baniko']
 
@@ -394,21 +395,21 @@ nova_listo.reverse()  # renversigos sen krei novan liston (in place)
 print(nova_listo)  # ['Baniko', 'Kruko', 1]
 
 # Leciono 47: Listoj 2
-print('\nLeciono 47: \n')
+print("\nLeciono 47: \n")
 
-listo = [1, 5, 'Kruko', 'Baniko', 'Vilhelmo',  3.1415]
-print(listo.index('Vilhelmo'))  # listo havas indicojn, ĉi-kaze 4
+listo = [1, 5, "Kruko", "Baniko", "Vilhelmo", 3.1415]
+print(listo.index("Vilhelmo"))  # listo havas indicojn, ĉi-kaze 4
 # print(listo.index(42)) # eraro, anstataŭ montri negativan indicon
 print(listo[2])  # 'Kruko'
-print('Baniko' in listo)  # True
+print("Baniko" in listo)  # True
 # print(listo[9]) # indico fore de intervalo
 print(listo[-1])  # samkiel ĉenoj, do 3.1415
 print(listo[-3])  # 'Baniko'
 
 # Leciono 48: Listoj 3
-print('\nLeciono 48: \n')
+print("\nLeciono 48: \n")
 
-listo = ['Akvo', 'Biero', 'Vino', 'Ĉokolado', 'Pomo']
+listo = ["Akvo", "Biero", "Vino", "Ĉokolado", "Pomo"]
 print(listo[1:3])  # de indico 1 ĝis 3, sen inkluzivi 3-n, do ['Biero', 'Vino']
 print(listo[1:-1])  # ['Biero', 'Vino', 'Ĉokolado']
 print(listo[1:])  # de indico 1 ĝisfine ['Biero', 'Vino', 'Ĉokolado', 'Pomo']
@@ -425,7 +426,7 @@ del listo[1:]
 print(listo)  # ['Akvo']
 
 # Leciono 49: Opoj (tuples)
-print('\nLeciono 49: \n')
+print("\nLeciono 49: \n")
 
 # plej granda diferenco inter listoj kaj opoj estas neŝanĝebleco de opoj
 opo = tuple()
@@ -433,11 +434,11 @@ opo = ()
 print(type(opo))  # <class 'tuple'>
 
 # sube, ĉar parentezoj ankaŭ indikas esprimojn, esti atenta
-opo = ('unu')  # variablo "opo" nun estas ĉeno
+opo = "unu"  # variablo "opo" nun estas ĉeno
 print(type(opo))  # <class 'str'>
 
 # por deklari unu-nombran opon, uzu komon
-opo = ('unu',)
+opo = ("unu",)
 print(type(opo))  # <class 'tuple'>
 print(opo[0])  # indicigita tipo, samkiel listo, do " unu "
 
@@ -445,32 +446,31 @@ print(opo[0])  # indicigita tipo, samkiel listo, do " unu "
 # (TypeError: 'tuple' object does not support item assignment)
 # opo[0] = 'nova'
 
-koloroj = ('verda', 'flava', 'blua', 'blanka', 'blanka')
+koloroj = ("verda", "flava", "blua", "blanka", "blanka")
 print(koloroj[0])  # verda
 print(koloroj[-1])  # blanka
 print(koloroj[1:])  # ('flava', 'blua', 'blanka', 'blanka') ; kaj tiel plu
-print(koloroj.count('blanka'))  # kiom da eroj estas 'blanka', do 2
+print(koloroj.count("blanka"))  # kiom da eroj estas 'blanka', do 2
 print(len(koloroj))  # 5
 
 # Leciono 50: Vortaroj 1
-print('\nLeciono 50: \n')
+print("\nLeciono 50: \n")
 
 # plej kutime, indico de vortaro enhavas ĉenon, sed eblas entjero ktp
 # pitona vortaro TRE similas al objekto de ĴavaSkripto
 # sed kiel la nomo diras, estas alia afero.
 # (objektoj determinas heredecon, ekz-e)
-homo = {'nomo': 'Instruistino Ana', 'aĝo': 38,
-        'kursoj': ['Angla', 'Portugala']}
+homo = {"nomo": "Instruistino Ana", "aĝo": 38, "kursoj": ["Angla", "Portugala"]}
 print(type(homo))  # <class 'dict'>
 # dir(dict)
 print(len(homo))  # 3
 
 # {'nomo': 'Instruistino Ana', 'aĝo': 38, 'kursoj': ['Angla', 'Portugala']}
 print(homo)
-print(homo['nomo'])  # Instruistino Ana
-print(homo['aĝo'])  # 38
-print(homo['kursoj'])  # ['Angla', 'Portugala']
-print(homo['kursoj'][1])  # Portugala
+print(homo["nomo"])  # Instruistino Ana
+print(homo["aĝo"])  # 38
+print(homo["kursoj"])  # ['Angla', 'Portugala']
+print(homo["kursoj"][1])  # Portugala
 # homo['etikedoj'] # eraro, ĉar indico ne ekzistas
 print(homo.keys())  # dict_keys(['nomo', 'aĝo', 'kursoj'])
 
@@ -480,39 +480,39 @@ print(homo.values())
 # ('kursoj', ['Angla', 'Portugala'])])
 print(homo.items())
 
-print(homo.get('aĝo'))  # 38
-print(homo.get('etikedoj'))  # None , ĉar ne ekzistas
+print(homo.get("aĝo"))  # 38
+print(homo.get("etikedoj"))  # None , ĉar ne ekzistas
 
 # liveras [], ĉar oni indikis ĝin kiel implican
-print(homo.get('etikedoj', []))
+print(homo.get("etikedoj", []))
 
 # Leciono 51: Vortaroj 2
-print('\nLeciono 51: \n')
+print("\nLeciono 51: \n")
 
-homo = {'nome': 'Instruisto Alberto', 'aĝo': 43, 'kursoj': ['React', 'Python']}
-homo['aĝo'] = 44
-homo['kursoj'].append('Angular')
+homo = {"nome": "Instruisto Alberto", "aĝo": 43, "kursoj": ["React", "Python"]}
+homo["aĝo"] = 44
+homo["kursoj"].append("Angular")
 # {'nome': 'Instruisto Alberto', 'aĝo': 44,
 # 'kursoj': ['React', 'Python', 'Angular']}
 print(homo)
 
-homo.pop('aĝo')  # kiel pop() de JS-a matrico
+homo.pop("aĝo")  # kiel pop() de JS-a matrico
 # {'nome': 'Instruisto Alberto', 'kursoj': ['React', 'Python', 'Angular']}
 print(homo)
 
-homo.update({'aĝo': 40, 'Genro': 'V'})
+homo.update({"aĝo": 40, "Genro": "V"})
 # {'nome': 'Instruisto Alberto',
 # 'kursoj': ['React', 'Python', 'Angular'], 'aĝo': 40, 'Genro': 'V'}
 print(homo)
 
-del homo['kursoj']
+del homo["kursoj"]
 print(homo)  # {'nome': 'Instruisto Alberto', 'aĝo': 40, 'Genro': 'V'}
 
 homo.clear()
 print(homo)  # {}
 
 # Leciono 52: Aroj
-print('\nLeciono 52: \n')
+print("\nLeciono 52: \n")
 
 # aro estas malordigita (sen-indica) kolekto
 # sen duobligitaj elementoj (senripeta kolekto)
@@ -525,10 +525,10 @@ print('\nLeciono 52: \n')
 a = {1, 2, 3}
 print(type(a))  # <class 'set'>
 # {'t', 'n', 'o', 'p', 'i'} kreiĝis aro ekde la ĉeno, senripete
-a = set('pitonnnno')
+a = set("pitonnnno")
 print(a)
 
-print('3' not in a, 'n' in a)  # True True
+print("3" not in a, "n" in a)  # True True
 
 print({1, 2, 3} == {3, 2, 1, 3})  # True
 
@@ -552,13 +552,13 @@ aro1 -= {2}
 print(aro1)  # {1, 3}
 
 # Leciono 53: Interpolado de ĉenoj
-print('\nLeciono 53: \n')
+print("\nLeciono 53: \n")
 
-nomo, aĝo = 'Joop', 30
+nomo, aĝo = "Joop", 30
 
-print('Nomo: %s Aĝo: %d' % (nomo, aĝo))  # eksmoda
-print('Nomo: {0} Aĝo: {1}'.format(nomo, aĝo))  # ĝis pitono < 3.6
-print(f'Nomo: {nomo} Aĝo: {aĝo}')  # ekde pitono >= 3.6
+print("Nomo: %s Aĝo: %d" % (nomo, aĝo))  # eksmoda
+print("Nomo: {0} Aĝo: {1}".format(nomo, aĝo))  # ĝis pitono < 3.6
+print(f"Nomo: {nomo} Aĝo: {aĝo}")  # ekde pitono >= 3.6
 
 # from string import Template
 # s = Template('Nomo: $nomo Aĝo: $aĝo')

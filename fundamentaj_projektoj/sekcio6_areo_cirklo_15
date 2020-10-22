@@ -5,8 +5,8 @@ import errno
 
 
 class TerminalaKoloro:
-    ERARE = '\033[91m'
-    NORMALE = '\033[0m'
+    ERARE = '\033[91m'  # ruĝe
+    NORMALE = '\033[0m'  # normale
 
 
 def help_mesaĝilo():

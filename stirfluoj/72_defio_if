@@ -24,25 +24,25 @@ if __name__ == "__main__":
 
     try:
         noto = float(noto)
-        if(noto > 0 and noto <= 1):
+        if 0 < noto <= 1:
             print("Via noto, litere: E-")
-        elif(noto > 1 and noto <= 2):
+        elif 1 < noto <= 2:
             print("Via noto, litere: E")
-        elif(noto > 2 and noto <= 3):
+        elif 2 < noto <= 3:
             print("Via noto, litere: D-")
-        elif(noto > 3 and noto <= 4):
+        elif 3 < noto <= 4:
             print("Via noto, litere: D")
-        elif(noto > 4 and noto <= 5):
+        elif 4 < noto <= 5:
             print("Via noto, litere: C-")
-        elif(noto > 5 and noto <= 6):
+        elif 5 < noto <= 6:
             print("Via noto, litere: C")
-        elif(noto > 6 and noto <= 7):
+        elif 6 < noto <= 7:
             print("Via noto, litere: B-")
-        elif(noto > 7 and noto <= 8):
+        elif 7 < noto <= 8:
             print("Via noto, litere: B")
-        elif(noto > 8 and noto <= 9):
+        elif 8 < noto <= 9:
             print("Via noto, litere: A-")
-        elif (noto > 9 and noto <= 10):
+        elif 9 < noto <= 10:
             print("Via noto, litere: A")
         else:
             erarmesaĝo()
