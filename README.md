@@ -1,4 +1,3 @@
 # kursopitono2020
-
-Provo denove, ekde Fedora 31!
-Kaj Rajzentoŝo!
+Dosieroj rilataj al Udemia kurso.
+Fundamentoj de Pitono.
