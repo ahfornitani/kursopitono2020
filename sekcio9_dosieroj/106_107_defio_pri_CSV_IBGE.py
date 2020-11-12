@@ -12,4 +12,5 @@ def legi(url):
 
 
 if __name__ == "__main__":
-    legi(r"https://files.cod3r.com.br/curso-ython/desafio-ibge.csv")
+    # legi(r"https://files.cod3r.com.br/curso-ython/desafio-ibge.csv")
+    legi(r"105_desafio-ibge.csv")
